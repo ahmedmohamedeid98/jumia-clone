@@ -1,0 +1,12 @@
+.pri-color {
+    color: #E4811C;
+}
+
+#cart-budget-id {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #E4811C;
+}
