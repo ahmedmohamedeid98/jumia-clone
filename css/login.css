@@ -1,1 +1,47 @@
 /* login css */
+
+.loginbox input[type="text"],input[type="password"],input[type="email"]{
+    border: none;
+    border-bottom: 1px solid gray;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color:gray;
+    width: 440px;
+    margin-top: 50px;
+    
+    }.loginbox button[type="submit"]{
+        border: none;
+        outline: none;
+        height: 50px;
+        background:orange;
+        width: 440px;
+        margin-top: 50px;
+position: absolute;
+bottom: 120px;
+
+
+    }
+    .loginbox button[type="button"]{
+
+        width: 440px;
+        margin-top: 50px;
+position:absolute ;
+bottom: 50px;
+
+    }
+    
+    h3{
+        padding: 0;
+        margin: 0 0 20px;
+      color: orange;
+    
+
+    }
+    /* .div1{
+        border-left: rgb(29, 26, 26) solid;
+    }
+    */.loginbox div1{
+border-left: soid gray ;
+         
+    }
