@@ -19,8 +19,7 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/products.css">
     
-    <!-- jQuery cdn -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 
 
 </head>
@@ -104,15 +103,15 @@
 
     <div class="container-fluid p-3">
         <div class="row">
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3 product">
                 <div class="card">
-                    <img class="card-img-top" src="../resources/products/1.jpg" alt="Card image">
+                    <img class="card-img-top pt-2" src="../resources/products/1.jpg" alt="Card image">
                     <div class="card-body">
                         <p class="card-title cart-title-text">Huawei Y6p - 6.3-inch 64GB/3GB 4G Mobile Phone - Emerald
                             Green</p>
                         <div class="d-flex justify-content-between">
-                            <p class="card-text fw-bold mb-1">890$</p>
-                            <p class="card-text text-muted mb-1"><del>1000$</del></p>
+                            <p class="card-text fw-bold mb-1 price">890$</p>
+                            <p class="card-text text-muted mb-1"><del class="discountedPrice">1000$</del></p>
                         </div>
                         <div class="d-inline-flex align-items-center">
                             <i class="fas fa-star rating-on me-1"></i>
@@ -120,22 +119,22 @@
                             <i class="fas fa-star rating-on me-1"></i>
                             <i class="fas fa-star rating-on me-1"></i>
                             <i class="fas fa-star rating-off me-1"></i>
-                            <i class="rating-off">(40)</i>
+                            <i class="rating-off reviewsCount">(40)</i>
                         </div>
                         <div class="d-flex align-items-center mt-4">
-                            <a href="#" class="btn btn-primary flex-fill me-2">See Profile</a>
-                            <i class="fas fa-heart" id="favorite"></i>
-
+                            <button accesskey="1" class="btn flex-fill btn-outline-warning add_to_cart_btn text-dark me-2"><i class="fal fa-shopping-cart me-2"></i><small>Add To Cart</small></button>
+                            <i accesskey="1" class="fas fa-heart favorite"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- js sources -->
     <script src="../js/navbar.js"></script>
+    <!-- jQuery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/products.js"></script>
 
     <!-- bootstrap js cdn -->

@@ -1,5 +1,6 @@
 .cart-title-text {
   overflow: hidden;
+  height: 3rem;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
@@ -16,7 +17,23 @@
     font-size: 16px;
 }
 
-#favorite {
+.favorite {
     color: #C7C7CD;
     font-size: 24px;
+}
+
+.favorite:hover {
+    cursor: pointer;
+}
+
+.favorite-on {
+    color: #EC255A;
+}
+
+.card button {
+    background-color: #F6B01E;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
