@@ -67,19 +67,22 @@
                                     class="fal fa-user"></i> <span class="mx-1">Account</span></a>
                             <ul class="dropdown-menu">
                                 <li class="d-flex justify-content-center w-100 px-2"><a
-                                        class="btn shadow w-100 my-2 text-white" style="background-color: #E4811C;" href="./html/login.html">Sign
+                                        class="btn shadow w-100 my-2 text-white" style="background-color: #E4811C;"
+                                        href="./html/login.html">Sign
                                         In</a></li>
                                 <hr class="text-muted">
                                 <li><a class="dropdown-item" href="#"><i class="fal fa-user me-2"></i>My Account</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-box me-2"></i>Orders</a></li>
-                                <li><a class="dropdown-item" href="./html/favorites.html"><i class="fal fa-heart me-2"></i>Favorites</a>
+                                <li><a class="dropdown-item" href="./html/favorites.html"><i
+                                            class="fal fa-heart me-2"></i>Favorites</a>
                                 </li>
                             </ul>
                         </li>
                         <!-- cart link  -->
                         <li class="nav-item">
-                            <a class="d-flex justify-content-center align-items-center nav-link" href="./html/cart.html">
+                            <a class="d-flex justify-content-center align-items-center nav-link"
+                                href="./html/cart.html">
                                 <span style="position: relative;">
                                     <i class="fal fa-shopping-cart mt-2 me-2" style="font-size: 20;"></i>
                                     <div class="d-flex justify-content-center align-items-center budget rounded-circle"
@@ -97,9 +100,26 @@
 
 
     <!-- Home Slider -->
-    <div class="container mt-4 bg-light">
+    <!-- Slider Left Side -->
+    <div class="container mt-4 bg-light rounded">
         <div class="row">
-            <div class="col-8 offset-1">
+            <div class="col-2" id="slider-Left-Side">
+                <a href="#" class="text-decoration-none text-body">
+                    <div class="pt-5 h6"><img src="./resources/index/Artboard_1.png"> 12/12 Deals</div>
+                </a>
+                <a href="#" class="text-decoration-none text-body">
+                    <div class="pt-5 h6"><img src="./resources/index/Artboard_1 (1).png"> Flash Sales</div>
+                </a>
+                <a href="#" class="text-decoration-none text-body">
+                    <div class="pt-5 h6"><img src="./resources/index/JumiaOne_1.png"> Recharge & Bill</div>
+                </a>
+                <a href="#" class="text-decoration-none text-body">
+                    <div class="pt-5 h6"><img src="./resources/index/Artboard_1222.png"> Orange Points</div>
+                </a>
+            </div>
+
+            <!-- Main Slider -->
+            <div class="col-8">
                 <div id="homeSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#homeSlider" data-bs-slide-to="0" class="active"
@@ -122,137 +142,339 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/12.12 Teasing.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/12.12 Teasing.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/Men fashion.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/Men fashion.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/1 EGP.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/1 EGP.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/Women fashion.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/Women fashion.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/Food & beverage.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/Food & beverage.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/Household care.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/Household care.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/Winter home.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/Winter home.jpg" class="rounded w-100"></a>
                         </div>
                         <div class="carousel-item" data-bs-interval="5000">
-                            <a href="#"><img src="./resources/index/JPay - TELE5.jpg" class="d-block w-100 rounded"></a>
+                            <a href="#"><img src="./resources/index/JPay - TELE5.jpg" class="rounded w-100"></a>
                         </div>
                     </div>
 
-                    <button class="carousel-control-prev" type="button" data-bs-target="#homeSlider"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                    <button class="carousel-control-prev" onmouseover="prevMouseOver()" onmouseleave="prevMouseLeave()"
+                        type="button" data-bs-target="#homeSlider" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" id="home-Slider-Prev" style="visibility: hidden;"
+                            aria-hidden="true"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#homeSlider"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                    <button class="carousel-control-next" onmouseover="nextMouseOver()" onmouseleave="nextMouseLeave()"
+                        type="button" data-bs-target="#homeSlider" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" id="home-Slider-Next" style="visibility: hidden;"
+                            aria-hidden="true"></span>
                     </button>
                 </div>
             </div>
 
-            <div class="col-2">
-                <div class="mb-4">
-                    <a href="#"><img src="./resources/index/Teaser Flash Sales - EN.jpg" class="rounded"></a>
-                </div>
+            <!-- Slider Right Side -->
+            <div class="col-2 p-0 d-flex flex-wrap">
                 <div>
-                    <a href="#"><img src="./resources/index/Teaser Call to order - EN.jpg" class="rounded"></a>
+                    <a href="#"><img src="./resources/index/Teaser Flash Sales - EN.jpg" class="rounded w-100"></a>
                 </div>
+                <div class="mt-1">
+                    <a href="#"><img src="./resources/index/Teaser Call to order - EN.jpg" class="rounded w-100"></a>
+                </div>
+                <a href="#" class="text-decoration-none w-100 text-white rounded" id="sell-Div">
+                    <div class="h5 text-center pt-3">
+                        <i class="fas fa-star" id="star-Icon"></i>
+                        <span id="sell-Text"> Sell on Jumia</span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 
     <!-- Top selling items -->
     <div class="container bg-light mt-4">
-        <div class="row">
-            <div class="col-12 p-2">
-                <p class="h4">Top selling items</p>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Boot Suede Heeled Biada  -black.jpg"
-                            style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title"><small>Boot Suede Heeled ...</small></p>
-                            <h6 class="card-text">EGP 200</h6>
-                            <div class="card-text text-decoration-line-through text-muted">EGP 500</div>
+        <div class="col-12 p-2">
+            <p class="h4">Top selling items</p>
+        </div>
+
+        <!-- Main Cards Slider -->
+        <div class="col-12" onmouseover="cardsSliderMouseOver()" onmouseleave="cardsSliderMouseLeave()">
+            <div id="cardsSlider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Cards Slider 1 -->
+                    <div class="carousel-item active" data-bs-interval="120000">
+                        <div class="row">
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="./html/products.html" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100" src="./resources/index/mobile.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Huawei Y6p - 6.3-inch</small></p>
+                                            <h6 class="card-text">EGP 2,399</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 2,760
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Boot Suede Heeled Biada  -black.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Boot Suede Heeled ...</small></p>
+                                            <h6 class="card-text">EGP 200</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 500</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Fresh ECO Electric Oven With Grill & Fan -_y.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Fresh ECO Electric Oven</small></p>
+                                            <h6 class="card-text">EGP 999</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 1,800
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Cluc Diamond Fit Pendant Light  - Black.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Cluc Diamond Fit ...</small></p>
+                                            <h6 class="card-text">EGP 131</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 775</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Me Now LipLiner Pencil Package - 12 Colors -.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Me Now LipLiner Pencil</small></p>
+                                            <h6 class="card-text">EGP 131</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 775</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Tiba Mattress Topper - Tiba.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Mattress Topper ...</small></p>
+                                            <h6 class="card-text">EGP 199 - EGP 399</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 359 - EGP
+                                                749</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Fresh ECO Electric Oven With Grill & Fan -_y.jpg"
-                            style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title"><small>Fresh ECO Electric Oven</small></p>
-                            <h6 class="card-text">EGP 999</h6>
-                            <div class="card-text text-decoration-line-through text-muted">EGP 1,800</div>
+                    </div>
+
+                    <!-- Cards Slider 2 -->
+                    <div class="carousel-item" data-bs-interval="120000">
+                        <div class="row">
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Me Now LipLiner Pencil Package - 12 Colors -.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Me Now LipLiner Pencil</small></p>
+                                            <h6 class="card-text">EGP 131</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 775</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Tiba Mattress Topper - Tiba.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Mattress Topper ...</small></p>
+                                            <h6 class="card-text">EGP 199 - EGP 399</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 359 - EGP
+                                                749</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Leather Ankle Boot - Havan.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Leather Ankle Boot ...</small></p>
+                                            <h6 class="card-text">EGP 115</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 800</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Ho Holland Hoodie -White & Baby Blue.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Ho Holland Hoodie ...</small></p>
+                                            <h6 class="card-text">EGP 285</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 470
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100" src="./resources/index/1.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Fresh HB-800-FO ...</small></p>
+                                            <h6 class="card-text">EGP 725</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 1,999
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100" src="./resources/index/ber.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Grace Cole Boutiqe ...</small></p>
+                                            <h6 class="card-text">EGP 109</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 300</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Window Magnetic Screen Door Magic Mesh Cover.jpg"
-                            style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title"><small>Window Magnetic ...</small></p>
-                            <h6 class="card-text">EGP 71</h6>
-                            <div class="card-text text-decoration-line-through text-muted">EGP 199</div>
+                    </div>
+
+                    <!-- Cards Slider 3 -->
+                    <div class="carousel-item" data-bs-interval="120000">
+                        <div class="row">
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100" src="./resources/index/1.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Fresh HB-800-FO ...</small></p>
+                                            <h6 class="card-text">EGP 725</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 1,999
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100" src="./resources/index/ber.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Grace Cole Boutiqe ...</small></p>
+                                            <h6 class="card-text">EGP 109</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 300</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Bundle Of (15) Women Ankle Socks For Women.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Bundle Of (15) Women</small></p>
+                                            <h6 class="card-text">EGP 49 - EGB 69</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 299 - EGB
+                                                349</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Modern Home Printer Stand And Desk Storage Organize.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Modern Home Printer</small></p>
+                                            <h6 class="card-text">EGP 800</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 1200
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Snooze High Warmness Blanket - 200x220 Cm -.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Snooze High Warmness</small></p>
+                                            <h6 class="card-text">EGP 219</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 350</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-2 p-1">
+                                <div class="card">
+                                    <a href="#" class="text-decoration-none text-body">
+                                        <img class="card-img-top w-100"
+                                            src="./resources/index/Mintra Stylish Warm Blanket - Super Soft - (.jpg">
+                                        <div class="card-body">
+                                            <p class="card-title"><small>Mintra Stylish Warm ...</small></p>
+                                            <h6 class="card-text">EGP 148</h6>
+                                            <div class="card-text text-decoration-line-through text-muted">EGP 210</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Cluc Diamond Fit Pendant Light  - Black.jpg"
-                            style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title"><small>Cluc Diamond Fit ...</small></p>
-                            <h6 class="card-text">EGP 131</h6>
-                            <div class="card-text text-decoration-line-through text-muted">EGP 775</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Me Now LipLiner Pencil Package - 12 Colors -.jpg"
-                            style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title"><small>Me Now LipLiner Pencil</small></p>
-                            <h6 class="card-text">EGP 131</h6>
-                            <div class="card-text text-decoration-line-through text-muted">EGP 775</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Tiba Mattress Topper - Tiba.jpg" style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title"><small>Mattress Topper ...</small></p>
-                            <h6 class="card-text">EGP 199 - EGP 399</h6>
-                            <div class="card-text text-decoration-line-through text-muted">EGP 359 - EGP 749</div>
-                        </div>
-                    </a>
-                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#cardsSlider" data-bs-slide="prev"
+                    style="width: 30px;">
+                    <span class="carousel-control-prev-icon" id="cards-Slider-Prev" style="visibility: hidden;"
+                        aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#cardsSlider" data-bs-slide="next"
+                    style="width: 30px;">
+                    <span class="carousel-control-next-icon" id="cards-Slider-Next" style="visibility: hidden;"
+                        aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </div>
@@ -272,17 +494,20 @@
     <div class="container bg-light mt-4 images-Scale">
         <div class="row">
             <div class="col-6 p-2">
-                <a href="#"><img src="./resources/index/Men_-_Floor-Desktop_-EN_4.jpg" class="d-block w-100 rounded"></a>
+                <a href="#"><img src="./resources/index/Men_-_Floor-Desktop_-EN_4.jpg"
+                        class="d-block w-100 rounded"></a>
             </div>
             <div class="col-6 p-2">
-                <a href="#"><img src="./resources/index/Hero_2_-_Floor-Desktop_EN.jpg" class="d-block w-100 rounded"></a>
+                <a href="#"><img src="./resources/index/Hero_2_-_Floor-Desktop_EN.jpg"
+                        class="d-block w-100 rounded"></a>
             </div>
         </div>
     </div>
 
     <div class="container bg-light mt-2 images-Scale">
         <div class="row">
-            <div class="col-12 p-2"><a href="#"><img src="./resources/index/1152-252-EN.gif" class="d-block w-100 rounded"></a>
+            <div class="col-12 p-2"><a href="#"><img src="./resources/index/1152-252-EN.gif"
+                        class="d-block w-100 rounded"></a>
             </div>
         </div>
     </div>
@@ -308,8 +533,18 @@
 
             <div class="col-2 p-1">
                 <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Men_s Fashion.png" style="width:100%">
+                    <a href="./html/products.html" class="text-decoration-none text-body">
+                        <img class="card-img-top w-100" src="./resources/index/Mobile & Accessories.png">
+                        <div class="card-body">
+                            <p class="card-title text-center"><small>Mobile & Accessories</small></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-2 p-1">
+                <div class="card">
+                    <a href="./html/products.html" class="text-decoration-none text-body">
+                        <img class="card-img-top w-100" src="./resources/index/Men_s Fashion.png">
                         <div class="card-body">
                             <p class="card-title text-center"><small>Men's fashion</small></p>
                         </div>
@@ -318,8 +553,8 @@
             </div>
             <div class="col-2 p-1">
                 <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Women_s Fashion.png" style="width:100%">
+                    <a href="./html/products.html" class="text-decoration-none text-body">
+                        <img class="card-img-top w-100" src="./resources/index/Women_s Fashion.png">
                         <div class="card-body">
                             <p class="card-title text-center"><small>Women's fashion</small></p>
                         </div>
@@ -328,8 +563,8 @@
             </div>
             <div class="col-2 p-1">
                 <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/TVs & Gaming.png" style="width:100%">
+                    <a href="./html/products.html" class="text-decoration-none text-body">
+                        <img class="card-img-top w-100" src="./resources/index/TVs & Gaming.png">
                         <div class="card-body">
                             <p class="card-title text-center"><small>TVs & Gaming</small></p>
                         </div>
@@ -338,8 +573,8 @@
             </div>
             <div class="col-2 p-1">
                 <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Home & Appliances.png" style="width:100%">
+                    <a href="./html/products.html" class="text-decoration-none text-body">
+                        <img class="card-img-top w-100" src="./resources/index/Home & Appliances.png">
                         <div class="card-body">
                             <p class="card-title text-center"><small>Home & Appliances</small></p>
                         </div>
@@ -348,20 +583,10 @@
             </div>
             <div class="col-2 p-1">
                 <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Car Essentials.png" style="width:100%">
+                    <a href="./html/products.html" class="text-decoration-none text-body">
+                        <img class="card-img-top w-100" src="./resources/index/Food & Beverage1.png">
                         <div class="card-body">
-                            <p class="card-title text-center"><small>Car Essentials</small></p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-2 p-1">
-                <div class="card">
-                    <a href="#" class="text-decoration-none text-body">
-                        <img class="card-img-top" src="./resources/index/Food & Beverage1.png" style="width:100%">
-                        <div class="card-body">
-                            <p class="card-title text-center"><small>Food & beverage</small></p>
+                            <p class="card-title text-center"><small>Food & Beverage</small></p>
                         </div>
                     </a>
                 </div>
@@ -379,7 +604,8 @@
                 <a href="#"><img src="./resources/index/Floor-Desktop-en_copy_5.jpg" class="d-block w-100 rounded"></a>
             </div>
             <div class="col-6 p-2">
-                <a href="#"><img src="./resources/index/Floor-Desktop-en_copy-(8)-(1).jpg" class="d-block w-100 rounded"></a>
+                <a href="#"><img src="./resources/index/Floor-Desktop-en_copy-(8)-(1).jpg"
+                        class="d-block w-100 rounded"></a>
             </div>
         </div>
     </div>
@@ -399,12 +625,13 @@
             <div class="col-12 text-center p-2">
                 <p class="h4">Top Brands</p>
             </div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/_LC_Waikiki_260_x_144.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/AE.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Defacto.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Knorr.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Toshiba.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Dettol.png" width=180px;></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/_LC_Waikiki_260_x_144.png"></a>
+            </div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/AE.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Defacto.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Knorr.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Toshiba.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Dettol.png"></a></div>
         </div>
     </div>
 
@@ -415,19 +642,21 @@
                 <p class="h4">PICKED FOR YOU</p>
             </div>
             <div class="col-12 p-2">
-                <a href="#"><img src="./resources/index/Men’s_Fashion_-1152x252_-EN.jpg" class="d-block w-100 rounded"></a>
+                <a href="#"><img src="./resources/index/Mens_Fashion_-1152x252_-EN.jpg"
+                        class="d-block w-100 rounded"></a>
             </div>
         </div>
     </div>
 
     <div class="container bg-light mt-2 images-Scale">
         <div class="row">
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/_LC_Waikiki_260_x_144.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/AE.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Andora.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Mesery.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/US-Polo.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/TownTeam.png" width=180px;></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/_LC_Waikiki_260_x_144.png"></a>
+            </div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/AE.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Andora.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Mesery.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/US-Polo.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/TownTeam.png"></a></div>
         </div>
     </div>
 
@@ -435,25 +664,28 @@
     <div class="container bg-light mt-4 images-Scale">
         <div class="row">
             <div class="col-12 p-2">
-                <a href="#"><img src="./resources/index/Women’s_Fashion-1152x252_-EN.jpg" class="d-block w-100 rounded"></a>
+                <a href="#"><img src="./resources/index/Womens_Fashion-1152x252_-EN.jpg"
+                        class="d-block w-100 rounded"></a>
             </div>
         </div>
     </div>
 
     <div class="container bg-light mt-2 images-Scale">
         <div class="row">
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/_LC_Waikiki_260_x_144.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/AE.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Kady.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Defacto.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Ravin.png" width=180px;></a></div>
-            <div class="col-2 p-1"><a href="#"><img src="./resources/index/Matalan.png" width=180px;></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/_LC_Waikiki_260_x_144.png"></a>
+            </div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/AE.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Kady.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Defacto.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Ravin.png"></a></div>
+            <div class="col-2 p-1"><a href="#"><img class="w-100" src="./resources/index/Matalan.png"></a></div>
         </div>
     </div>
 
 
     <!-- js sources -->
-    <script src="../js/navbar.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/index.js"></script>
 
     <!-- bootstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
