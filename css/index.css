@@ -18,10 +18,6 @@
     background-color: #F68B1E;
 }
 
-#sell-Text {
-    font-weight: bold;
-}
-
 #sell-Text:hover {
     text-decoration: underline;
 }
