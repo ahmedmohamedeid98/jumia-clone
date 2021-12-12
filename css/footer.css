@@ -1,21 +1,31 @@
-/* cart css */
 
 /* start footer style*/
-a:hover{
+.div1 a:hover{
     color: #F68B1E !important;
     
 }
-a{
-    text-decoration: none !important;
-}
+
 footer{
     background-color:#323232;
 }
-.div1 a {
+
+.div1 li a {
     font-size: 12px;
     color: #C7C7CD  !important;
     text-align: justify !important;
+    text-decoration: none !important;
 }
+.jumiadiv>h6{
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color:white
+}
+.para-bdg1>h6{
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color:white
+}
+
 .icon li{
     display: inline;
    
@@ -25,32 +35,48 @@ footer{
     padding-right: 16px;
 }
 
-button{
-    font-size: 20px;
+.para-bdg1 button{
+    font-size: 18px !important;
+   
 }
-p{
+.para-bdg1 p{
     font-size: 12px;
     color: #C7C7CD !important;
 }
+.jumiadiv p{
+    font-size: 12px;
+    color: #C7C7CD !important;
+}
+
 .iconbuscket{
     color: #F68B1E !important;
 }
-.badge{
+.bdg1{
     background-color: #F68B1E !important;
     font-size: large !important;
     padding: 10px!important;
 }
-h6{
-   font-size: 12px !important;
-   font-weight: bold !important;
-  
-}
-h2{
-    letter-spacing: .9px !important;
-    font-family: 'Prompt', sans-serif !important;
 
+.div1>h6{
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color:white
 }
-button p{
-    font-size: 8px !important;
+.btntext>h6{
+    font-size: 12px !important;
+    font-weight: bold !important;
+    color:white
 }
+.btntext>p{
+    font-size: 8px;
+    color: #C7C7CD !important;
+}
+.footerdiv a{
+    text-decoration: none !important;
+}
+.footerdiv a:hover{
+    color: #F68B1E !important;
+    
+}
+
 /*end footer style*/
