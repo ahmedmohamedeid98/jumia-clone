@@ -1,47 +1,57 @@
-/* login css */
+.loginbox input[type="text"],
+input[type="password"],
+input[type="email"] {
+    /* border: none; */
+    /* border-bottom: 1px solid gray; */
+    /* background: transparent; */
+    /* outline: none; */
 
-.loginbox input[type="text"],input[type="password"],input[type="email"]{
+    /* color:gray; */
+    border-bottom: 2px solid #E3E3E6;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+
+
+    /* background-color: aquamarine; */
+
+}
+
+.loginbox button[type="submit"] {
     border: none;
-    border-bottom: 1px solid gray;
-    background: transparent;
     outline: none;
-    height: 30px;
-    color:gray;
-    width: 440px;
-    margin-top: 50px;
-    
-    }.loginbox button[type="submit"]{
-        border: none;
-        outline: none;
-        height: 50px;
-        background:orange;
-        width: 440px;
-        margin-top: 50px;
-position: absolute;
-bottom: 120px;
+    background: orange;
+    /* font-size: 20px; */
+
+}
+
+.loginbox a[type="submit"] {
+    border: none;
+    outline: none;
+    background: orange;
+    /* font-size: 20px; */
+
+}
 
 
-    }
-    .loginbox button[type="button"]{
+.button-style {
 
-        width: 440px;
-        margin-top: 50px;
-position:absolute ;
-bottom: 50px;
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    }
-    
-    h3{
-        padding: 0;
-        margin: 0 0 20px;
-      color: orange;
-    
+.loginbox .float-end .div1 .para {
+    position: absolute;
+    bottom: 60%;
 
-    }
-    /* .div1{
-        border-left: rgb(29, 26, 26) solid;
-    }
-    */.loginbox div1{
-border-left: soid gray ;
-         
-    }
+}
+
+
+h3 {
+
+    color: orange;
+
+
+}

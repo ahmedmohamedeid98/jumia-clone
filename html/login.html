@@ -14,161 +14,110 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <!-- navbar css stylesheet -->
-    <link rel="stylesheet" href="../css/navbar.css">
     <!-- login css stylesheet -->
     <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
 
-    <!-- navbar section -->
-    <nav class="navbar navbar-expand-md navbar-light bg-white  px-3 py-0 shadow-sm" style="height: 60px;">
-        <div class="d-flex w-100 h-100">
-            <!-- Navbar Logo -->
-            <div class="flex-fill align-self-center">
-                <a class="navbar-brand" href="#">
-                    <img src="../resources/jumia-seeklogo.com.svg" width="140" height="50" alt="">
-                </a>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class=" col-md-5 loginbox me-3">
+
+                <h3 class="text-center">Login</h3>
+
+
+                <form class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="email-id" class="form-label"></label>
+                        <input type="email" class="form-control" placeholder="example@example.com" id="email-id"
+                            aria-describedby="emailHelp" required>
+                        <div class="valid-feedback feedback-pos">
+                            valid email
+                        </div>
+                        <div class="invalid-feedback feedback-pos">
+                            Please input a valid email
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <!-- <span class="input-group-text bg-white border-0" id="inputGroupPrepend"> -->
+                        <input type="password" class="form-control" placeholder="Password" id="password-id" required>
+
+                        <i class="fas fa-eye-slash mt-5 pb-5"></i>
+                        <!-- </span> -->
+                    </div>
+
+                    <div class="mb-3 form-check mt-5">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label><span
+                            class="text-danger ms-4 float-end">Forgot
+                            your password ?</span>
+                    </div>
+                    <button type="submit"
+                        class="btn btn-primary d-flex justify-content-between align-items-center  col-md-12 mt-4">
+                        <i class="far fa-envelope"></i>
+                        <span class="float-center text-normal">LOGIN</span>
+                        <div></div>
+                    </button>
+
+
+
+                    <button type="button"
+                        class="btn btn-primary col-md-12  text-center mt-4 d-flex justify-content-between align-items-center ">
+                        <i class="fab fa-facebook-square"></i>
+                        <span>LOGIN WHITH FASCEBOOK </span>
+                        <div></div>
+                    </button>
+                </form>
             </div>
-            <!-- search bar -->
-            <form class="flex-fill d-flex my-2 me-4">
-                <input class="form-control me-2" type="text" placeholder="Search">
-                <button class="btn shadow-sm text-white" style="background-color: #E4811C;"
-                    type="button">Search</button>
-            </form>
-            <!-- remaining space will be for navbar links -->
-            <div class="d-flex">
-                <!-- collapsible Navbar Icon -->
-                <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Navbar Links -->
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="./html/categories.html">Categories</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="./html/favorites.html">Favorites</a>
-                        </li>
-                        <li class="nav-item me-4">
-                            <a class="nav-link" href="./html/contact_us.html">Contact us</a>
-                        </li>
-                        <!-- account link , signin/ signup -->
-                        <li class="nav-item dropdown me-4">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i
-                                    class="fal fa-user"></i> <span class="mx-1">Account</span></a>
-                            <ul class="dropdown-menu">
-                                <li class="d-flex justify-content-center w-100 px-2"><a
-                                        class="btn shadow w-100 my-2 text-white" style="background-color: #E4811C;" href="./html/login.html">Sign
-                                        In</a></li>
-                                <hr class="text-muted">
-                                <li><a class="dropdown-item" href="#"><i class="fal fa-user me-2"></i>My Account</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-box me-2"></i>Orders</a></li>
-                                <li><a class="dropdown-item" href="./html/favorites.html"><i class="fal fa-heart me-2"></i>Favorites</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- cart link  -->
-                        <li class="nav-item">
-                            <a class="d-flex justify-content-center align-items-center nav-link" href="./html/cart.html">
-                                <span style="position: relative;">
-                                    <i class="fal fa-shopping-cart mt-2 me-2" style="font-size: 20;"></i>
-                                    <div class="d-flex justify-content-center align-items-center budget rounded-circle"
-                                        id="cart-budget-id"><small class="text-white" style="font-size: 10;">2</small>
-                                    </div>
-                                </span>
-                                <span class="ms-1">Cart</span>
-                            </a>
-                        </li>
-                    </ul>
+
+
+            <!-- -----------box-two------------ -->
+           
+
+            <div class="  d-flex flex-column justify-content-between col-md-5 loginbox ">
+
+                <div >
+                <h3 class="  text-center col-md">Create your jumia account</h3>
+
+                    <p class="para m-5 col-md h6">
+                        your jumia customer account in just afew clicks!<br>
+                        you can register either using your e-mail address or<br>
+                        through your Facebook account
+                    </p>
+                </div>
+
+                
+                <div>
+
+
+                    <a type="submit"
+                    href="../html/register.html"
+                        class="btn btn-primary  col-md-12 d-flex justify-content-between align-items-center mt-4">
+                        <i class="far fa-envelope"></i>
+                        <span>CREATE AN ACCOUNT VIA EMAIL</span>
+                        <div></div>
+
+                </a>
+
+
+
+                    <button type="button"
+                        class="btn btn-primary  col-md-12 text-center mt-4 d-flex justify-content-between align-items-center ">
+                        <i class="fab fa-facebook-square"></i>
+                        <span>CREGISTER WHITH FASCEBOOK</span>
+                        <div></div>
+                    </button>
                 </div>
             </div>
         </div>
-    </nav>
-
-
-    <div class="container">
-    <div class="row">
-    <div class="   div1 col-md-6 loginbox">
-
-        <h3 class="text-center mt-5">Login</h3>
-      
-
-        <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label" ></label>
-              <input type="email" class="form-control" placeholder="E-mail" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-            </div>
-            <div class="mb-3">
-                <span class="input-group-text bg-white border-0" id="inputGroupPrepend">
-                  <input type="password" class="form-control" placeholder="Password" id="exampleInputPassword1" required>
-                  <i class="fas fa-eye-slash mt-5"></i>
-                </span>
-              </div>
-    
-              <div class="mb-3 form-check mt-5">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Remember me</label><span class="text-danger ms-4">Forgot
-                  your password ?</span>
-              </div>
-              
-            <button type="submit" class="btn btn-primary  d-block mt-4">
-                <i class="far fa-envelope  h5 float-start"></i>
-                
-               <h5 class="float-center">LOGIN</h5> </button>
-
-
-
-                <button type="button" class="btn btn-primary  text-center mt-4 d-block  ">
-                    <i class="fab fa-facebook-square h5 float-start" ></i>
-                    <h5 class="float-center">       
-                   LOGIN WHITH FASCEBOOK  </h5></button>
-          </form>
     </div>
 
-
-<!-- -----------box-two------------ -->
-
-
-    <div class=" col-md-6 loginbox">
-
-        <h3 class="text-center mt-5">Create your jumia account</h3>
-        
-
-        <form class="float-end">
-            <div class=" div1 mb-3 ">
-             
-              <p class=" par m-5 ">Create your jumia customer account in just afew clicks!
-                  you can register either using your e-mail address or
-                   through your Facebook account 
-              </p>
-            </div>
-            
-        
-            <button type="submit" class="btn btn-primary  d-block mt-4">
-                <i class="far fa-envelope  h5 float-start"></i>
-                
-               <h5 class="float-center">CREATE AN ACCOUNT VIA EMAIL</h5> </button>
-
-
-
-                <button type="button" class="btn btn-primary  text-center mt-4 d-block  ">
-                    <i class="fab fa-facebook-square h5 float-start" ></i>
-                    <h5 class="float-center">       
-                   REGISTER WHITH FASCEBOOK  </h5></button>
-          </form>
-    </div>
-</div>
-</div>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
 
     <!-- bootstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
