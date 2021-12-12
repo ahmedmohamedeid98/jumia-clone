@@ -28,19 +28,26 @@
            
             <!-- make account -->
             <div class="row w-100">
-                <h1 class="ps-0">Create Account </h1>
-            
-                <input class="col mt-3 me-4 h-50 ps-0 pt-3 pb-2 pe-3 color-border " placeholder="First name">
-                <input class="col mt-3 me-4 h-50 ps-0 pt-3 pb-2 pe-3 color-border " placeholder="last name">
+                <h1 class="ps-0 mt-1 ">Create Account </h1>
+                <div class="row">
+            <label id="firstnamep" class="ps-0 mb-0  col  "></label>
+            <label id="seconednamep" class="ps-0  mb-0  col   "></label>
+        </div>
+                <input class="col mt-3 me-4 h-50 ps-0 pt-3 pb-2 pe-3 color-border " placeholder="First name"  id="fninp">
+               
+                <input class="col mt-3 me-4 h-50 ps-0 pt-3 pb-2 pe-3 color-border " placeholder="last name" id="scninp">
             </div>
 
 
-
+            <div class="row">
+                <label id="emaillabel" class="p-0    col  "></label>
+                <label id="passwordlabel" class="p-0  col   "></label>
+            </div>
             <!-- email and pass -->
             <div class="row w-100 ">
-                <input class="col mt-5 me-4 h-50 ps-0 pt-3 pb-2 pe-3 color-border" placeholder="ُEmail ">
+                <input class="col  me-4 h-50 ps-0 pt-3 pb-2 pe-3 color-border" placeholder="ُEmail "id="Emailsinp">
 
-                <input class="col mt-5 me-4 h-50  ps-0 pt-3 pb-2 pe-3 color-border" placeholder="PassWord">
+                <input class="col  me-4 h-50  ps-0 pt-3 pb-2 pe-3 color-border" placeholder="PassWord" id="passes">
             </div>
 
             <!-- code and phone -->
@@ -142,7 +149,7 @@
 
 
 
-
+<script src="../js/register.js"></script>
 
     <!-- bootstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
