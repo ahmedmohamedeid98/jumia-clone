@@ -105,7 +105,7 @@ $(document).ready(function () {
         $(".templet-cart")
             .clone()
             .last()
-            .removeClass("d-none templet-card") // display card and not make it templet
+            .removeClass("d-none templet-cart") // display card and not make it templet
             .find('.add_to_cart_btn')
             .attr("accessKey", id) // give "add_to_cart button" current product id for use it later
             .removeClass("disabled") // remove disabled if exist in last cloned element
