@@ -1,0 +1,110 @@
+.cartitem>h4{
+    font-weight: bold;
+}
+.item>p{
+    font-size: 13.5px;
+    font-weight: bold;
+}
+.itempara{
+    font-size: 15px;
+    font-weight: 470;
+    color: #ababae;
+}
+.itemLink a{
+    text-decoration: none;
+    color: black;
+    font-weight: 620;
+    font-size: 16px;
+}
+.itemLink a:hover{
+    color: #F68B1E;
+}
+.itemLink{
+    padding-bottom: 10px;
+}
+.loveItem a{
+    text-decoration: none;
+    color: #F68B1E;
+    font-weight: 600;
+    font-size: 14px;
+}
+.loveItem a:hover{
+    color: #F68B1E;
+}
+.loveItem i{
+    font-size: 15px;
+    padding-right: 9px;
+} 
+.deletItem a{
+    text-decoration: none;
+    color: #F68B1E;
+    font-weight: 590;
+    font-size: 13px;
+}
+.deletItem a:hover{
+    color: #F68B1E;
+}
+.deletItem i{
+    font-size: 15px;
+    padding-right: 5px;
+}
+.itemPrice{
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+.itemOldPrice{
+    font-size: 14px;
+    text-decoration: line-through;
+    text-align: center;
+    font-weight: 500;
+    color: #ABABAB;
+}
+.savingPrice{
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    color: #93D321;
+}
+.totalPrice{
+    color: #F68B1E;
+    font-size: 18px;
+    font-weight: 500;
+}
+.totaltxt{
+    font-size:16px ;
+    color: black;
+    padding-right: 30px;
+    padding-left: 9px;
+    font-weight: 600;
+}
+.total{
+    font-size: 20px;
+    color: #F68B1E;
+    font-weight: 550;
+}
+
+.totalPara{
+    color: #B2ADAB;
+    font-size:14px ;
+}
+.shopping{
+    padding: 8px 15px 8px 15px;
+    margin: 10px;
+    color: #F68B1E;
+    font-weight: 600;
+}
+
+.shopping:hover{
+    color: #F68B1E;
+}
+.checkout{
+    background-color:#F68B1E;
+    color: white;
+    padding: 8px;
+    font-weight: 600;
+}
+.checkout:hover{
+    background-color:#F17E0A;
+    color: white;
+}

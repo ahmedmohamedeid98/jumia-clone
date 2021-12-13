@@ -103,9 +103,101 @@
         </div>
     </nav>
 
-    <h1 class="mt-5 text-center">Cart Body</h1>
 
+
+<!--start cart body-->
+<div class="container-fluid bg-light m-0">
+    <div class="container bg-light px-3 pb-1 pt-4">
+        <div class="row">
+            <div class="cartitem"><h4>Cart ( <span>1</span> items)</h4></div>
+        </div>
+    </div>
     
+    <div class="container bg-light">
+        <div class="row m-auto">
+            <div class="item text-secondary col-md-6 col-sm-3"><p>ITEM</p></div>
+            <div class="item text-center quantity text-secondary col-md-2 col-sm-3"><p>QUANTITY</p></div>
+            <div class="item text-center price text-secondary col-md-2 col-sm-3"><p>UNIT PRICE</p></div>
+            <div class="item text-center supTotal text-secondary col-md-2 col-sm-3"><p>SUBTOTAL</p></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row bg-white m-auto mb-2 rounded">
+            <div class="col-md-6 col-sm-8 d-flex rounded">
+
+                <!--item style-->
+                <div class="itemimg d-inline-block mb-3 pt-2"><img src="./images/1.jpg" height="70" width="60"></div>
+                <div class="itemdisc d-inline-block rounded">
+                        <div class="itempara pt-1 px-3">Seller:<span class="itempara">Black Horse MG Marketplace</span> </div>
+                        <div class="itemLink pb-2 px-3 pb-4"><a href="#"><span>ECO Electric Oven With Grill & Fan - 48 L</span></a></div>
+                        <div class="loveItem d-inline-block  align-items-end px-3 pb-2"><a href="#" ><i class="far fa-heart"></i>MOVE TO SAVED ITEMS</a></div>
+                        <div class="deletItem d-inline-block  align-items-end pb-2"><a href="#"><i class="fas fa-trash"></i>REMOVE</a></div>
+                </div>
+             </div>
+                 <!--end item style-->
+
+                 <!--start quantity style-->
+                <div class="border-start border-end quantity  col-md-2 col-sm-4 rounded">
+                    <div class="form-group w-50 m-auto pt-3">
+                       <select class="form-control border-0 border-bottom text-center" id="selectform">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                </div>
+                <!--end quantity style-->
+
+                <!--start price style-->
+                <div class="border-end price  col-md-2 col-sm-6 rounded pt-3">
+                    <p class="itemPrice text-dark m-0">EGP <span class="price">999</span></p>
+                    <p class="itemOldPrice m-0">EGP <span class="oldPrice">1,800</span></p>
+                    <p class="savingPrice m-0"> Savings:EGP <span class="savingPrice"> 801</span></p>
+                </div>
+                <!--end price style-->
+                
+                <!--start subtotal style-->
+                <div class=" supTotal  col-md-2 col-sm-6 rounded">
+                    <p class="totalPrice text-center pt-3">EGP <span class="price">999</span></p>
+                </div>
+                <!--end subtotal style-->
+    </div>
+</div>
+
+                <!--start total price div-->
+                   <div class="container pt-3 d-flex">
+                       <div class="ms-auto">
+                           <div class="pb-1"><span class="totaltxt">Total:</span><span class="total">EGP </span> <span class="total">1,443</span></div>
+                           <p class="totalPara">Shipping fees not included yet</p>
+                       </div>
+                   </div>
+                <!--end total price div-->
+
+
+                <!--start shopping button-->
+                 <div class="container-fluid bg-white">
+                     <div class="row"> 
+                         <div class="col-sm-0 col-md-6 col-lg-6"> </div>
+                         <div class="col-sm-12 col-md-6 col-lg-6">
+                            <button type="button" class="btn  shopping rounded-0 border">CONTINUE SHOPPING</button>
+                            <button type="button" class="btn checkout rounded-0">CONTINUE TO CHECKOUT</button>
+                         </div>
+                     </div>
+                 </div>
+                <!--end shopping button-->
+
+                <!--start div to make padding bottom-->
+                <div class="container-fluid bg-light p-2"></div>
+                <!--end div to make padding bottom-->
+
+</div>
+
+<!--end cart body-->
+
+
    <!-- Footer -->
   <footer class="bg-#323232 text-center text-white ">
     <!-- Grid container -->
