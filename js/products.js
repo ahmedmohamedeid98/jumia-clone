@@ -46,6 +46,7 @@ $(document).ready(function () {
     ];
 
     // get list of products that added to favorites group
+    // "[item: sdf, lkfd: ""]"
     function getFavorites() {
         var data = localStorage.getItem(FAVORITES_KEY);
         if (data) {
@@ -59,7 +60,7 @@ $(document).ready(function () {
     function restoreUpdatedFavoriteProducts(updatedGroup) {
         localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedGroup));
     }
-
+  
     // get product item by id
     function getProduct(id) {
         var results = productsGroup.filter((prod) => prod.id == id);
@@ -110,6 +111,7 @@ $(document).ready(function () {
             .attr("accessKey", id) // give "add_to_cart button" current product id for use it later
             .removeClass("disabled") // remove disabled if exist in last cloned element
             .addClass(isExistInCart ? "disabled" : "") // disable add to cart button if this product exist in the cart
+            .text(isExistInCart ? "added to cart" : "Add to cart") // disable add to cart button if this product exist in the cart
             .end()
             .find('.favorite')
             .removeClass('favorite-on') // remove favorite-on if it exist from last cloned element

@@ -17,6 +17,7 @@
 
     <!-- navbar css stylesheet -->
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/categoriesStyle.css">
 
 </head>
 
@@ -65,13 +66,15 @@
                                     class="fal fa-user"></i> <span class="mx-1">Account</span></a>
                             <ul class="dropdown-menu">
                                 <li class="d-flex justify-content-center w-100 px-2"><a
-                                        class="btn shadow w-100 my-2 text-white" style="background-color: #E4811C;" href="./login.html">Sign
+                                        class="btn shadow w-100 my-2 text-white" style="background-color: #E4811C;"
+                                        href="./login.html">Sign
                                         In</a></li>
                                 <hr class="text-muted">
                                 <li><a class="dropdown-item" href="#"><i class="fal fa-user me-2"></i>My Account</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"><i class="fas fa-box me-2"></i>Orders</a></li>
-                                <li><a class="dropdown-item" href="./favorites.html"><i class="fal fa-heart me-2"></i>Favorites</a>
+                                <li><a class="dropdown-item" href="./favorites.html"><i
+                                            class="fal fa-heart me-2"></i>Favorites</a>
                                 </li>
                             </ul>
                         </li>
@@ -93,10 +96,70 @@
         </div>
     </nav>
 
-    <h1 class="mt-5 text-center">Categories Body</h1>
+    <div class="container text-center bg-light">
+
+        <div class="row bg-light mt-5 pb-5 pt-5">
+            <h1>Amazing Winter deals </h1>
+            <div class="col-6 image">
+                <img src="../resources/image/Food & Beverage.png" width="100%">
+                <div class="sale">
+                    <p> up to <span>70%</span> off</p>
+                </div>
+            </div>
+
+            <div class="col-6 image">
+                <img src="../resources/image/Laptop & Accessories.png" width="100%">
+                <div class="sale">
+                    <p> up to <span>70%</span> off</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row bg-light mt-5 pt-5 pb-5">
+
+            <div class="col-6 image">
+                <img src="../resources/image/Mobile & Accessories.png" width="100%">
+                <div class="sale">
+                    <p> up to <span>70%</span> off</p>
+                </div>
+            </div>
+
+            <div class="col-6 image">
+                <img src="../resources/image/Women_s Fashion.png" width="100%">
+                <div class="sale">
+                    <p> up to <span>70%</span> off</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end -->
+    <!--start categories -->
+    <div class="container text-center  mt-5 pt-5 mb-5">
+
+        <div class="row bg-light">
+            <h1>new offers every day on every thing </h1>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 cat-card templet-cart d-none">
+                <div class="card p-2 bg-light mb-3">
+                    <div class="cart-img-top">
+                        <img class="cat-img" src="image url..." width="100%">
+                    </div>
+                    <div class="cart-title mt-2">Here Put your Title</div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- javaScript cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- js sources -->
     <script src="../js/navbar.js"></script>
+    <script src="../js/categories.js"></script>
 
     <!-- bootstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

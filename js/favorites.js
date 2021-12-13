@@ -63,11 +63,13 @@ $(document).ready(function () {
 
         // TODO : use this product id to add which product object 
         // to localStorage at cart products
+        
 
     });
 
     // Favorite Button Listener 
     $(".product").find('.favorite').on("click", (event) => {
+
         // access current product id
         var productId = event.currentTarget.accessKey;
 
@@ -83,10 +85,10 @@ $(document).ready(function () {
             200
         );
 
-        // 3. use this product id to remove this product object 
+        // TODO: use this product id to remove this product object 
         // from favorite products in localStorage
 
-        console.log("productId: " + productId);
+    
     });
 
 
