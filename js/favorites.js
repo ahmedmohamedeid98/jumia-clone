@@ -16,7 +16,9 @@ $(document).ready(function () {
         new product(1, "../resources/products/1.jpg", "Apple iPhone 13 Single SIM with FaceTime - 256GB - Blue", 1200, 1450, 3, 78),
         new product(2, "../resources/products/2.jpg", "Apple iPhone 13 Single SIM with FaceTime - 256GB - Blue", 1300, 1450, 3, 78),
         new product(5, "../resources/products/5.jpg", "Apple iPhone 13 Single SIM with FaceTime - 512GB - Pink", 1750, 1790, 4, 120),
+
     ];
+
 
 
     for (var i = 0; i < productsGroup.length; i++) {
@@ -63,7 +65,6 @@ $(document).ready(function () {
 
         // TODO : use this product id to add which product object 
         // to localStorage at cart products
-        
 
     });
 
@@ -88,11 +89,11 @@ $(document).ready(function () {
         // TODO: use this product id to remove this product object 
         // from favorite products in localStorage
 
-    
+
     });
 
 
-    $.wait = function( callback, milliseconds){
-        return window.setTimeout( callback, milliseconds );
-     }
+    $.wait = function (callback, milliseconds) {
+        return window.setTimeout(callback, milliseconds);
+    }
 });
