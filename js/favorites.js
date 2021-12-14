@@ -1,6 +1,10 @@
 $(document).ready(function () {
 
+    // Local Storage data Keys
+    const FAVORITES_KEY = "favorites";
+    const CARTITEMS_KEY = "cart_items";
 
+    // Product Object
     var product = function (id, image, title, price, discountedPrice, rating, reviewCount) {
         this.id = id;
         this.image = image;
@@ -11,6 +15,18 @@ $(document).ready(function () {
         this.reviewCount = reviewCount;
     }
 
+    // Cart Item Object
+    var cartItem = function (id, image, title, price, discountedPrice, rating, reviewCount, quantity) {
+        this.id = id;
+        this.image = image;
+        this.title = title;
+        this.price = price;
+        this.discountedPrice = discountedPrice;
+        this.rating = rating;
+        this.reviewCount = reviewCount;
+        this.quantity = quantity;
+    }
+
     // Note that this list in future will come from localStorage
     var productsGroup = [
         new product(1, "../resources/products/1.jpg", "Apple iPhone 13 Single SIM with FaceTime - 256GB - Blue", 1200, 1450, 3, 78),
@@ -19,9 +35,50 @@ $(document).ready(function () {
 
     ];
 
+    // get product item by id
+    function getProduct(id) {
+        var results = productsGroup.filter((prod) => prod.id == id);
+        if (results.length > 0) {
+            return results[0];
+        } else {
+            return {};
+        }
+    }
+
+    // get cart items list
+    function getCartItems() {
+        var data = localStorage.getItem(CARTITEMS_KEY);
+        if (data) {
+            return JSON.parse(data);
+        } else {
+            return [];
+        }
+    }
+
+    // restore updated cart items
+    function restoreUpdateCartItems(updatedGroup) {
+        localStorage.setItem(CARTITEMS_KEY, JSON.stringify(updatedGroup));
+    }
+
+    // // get favorites item
+    // var favoritesGroup = getFavorites();
+    // get cart items
+    var cartItems = getCartItems();
+    // // get products ids list that belogin to favorites group
+    // var favoritesGroupIds = favoritesGroup.map((prod) => prod.id);
+    // get product ids list that belogin to cart items group
+    var cartGroupIds = cartItems.map((prod) => prod.id);
 
 
     for (var i = 0; i < productsGroup.length; i++) {
+
+        // current product id
+        var id = productsGroup[i].id;
+        // // check if current product added before to favorites group
+        // var isBelongsToFavorites = favoritesGroupIds.includes(id);
+        // check if current product exist in cart items or not
+        var isExistInCart = cartGroupIds.includes(id);
+
         $(".templet-card")
             .clone()
             .last()
@@ -29,7 +86,11 @@ $(document).ready(function () {
             .addClass("card-id-" + productsGroup[i].id) // use this class to access card itself
             .find('.add_to_cart_btn')
             .attr("accessKey", productsGroup[i].id)
+            .removeClass("disabled") // remove disabled if exist in last cloned element
+            .addClass(isExistInCart ? "disabled" : "") // disable add to cart button if this product exist in the cart
+            .text(isExistInCart ? "added to cart" : "Add to cart") // disable add to cart button if this product exist in the cart
             .end()
+
             .find('.favorite')
             .attr("accessKey", productsGroup[i].id)
             .addClass("favorite-on")
@@ -65,6 +126,24 @@ $(document).ready(function () {
 
         // TODO : use this product id to add which product object 
         // to localStorage at cart products
+
+        // get current product
+        var currentProduct = getProduct(productId);
+
+        // create new cart item object
+        var cart_item = new cartItem(currentProduct.id,
+            currentProduct.image,
+            currentProduct.title,
+            currentProduct.price,
+            currentProduct.discountedPrice,
+            currentProduct.rating,
+            currentProduct.reviewCount,
+            1);
+        // add this cart item to cart items group
+        cartItems.push(cart_item);
+        // resoter cart items group in local storage
+        restoreUpdateCartItems(cartItems);
+
 
     });
 
