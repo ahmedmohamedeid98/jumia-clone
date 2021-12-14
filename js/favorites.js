@@ -4,6 +4,17 @@ $(document).ready(function () {
     const FAVORITES_KEY = "favorites";
     const CARTITEMS_KEY = "cart_items";
 
+    // Product Object
+    var product = function (id, image, title, price, discountedPrice, rating, reviewCount) {
+        this.id = id;
+        this.image = image;
+        this.title = title;
+        this.price = price;
+        this.discountedPrice = discountedPrice;
+        this.rating = rating;
+        this.reviewCount = reviewCount;
+    }
+
     // Cart Item Object
     var cartItem = function (id, image, title, price, discountedPrice, rating, reviewCount, quantity) {
         this.id = id;
@@ -14,6 +25,16 @@ $(document).ready(function () {
         this.rating = rating;
         this.reviewCount = reviewCount;
         this.quantity = quantity;
+    }
+
+    // get product item by id
+    function getProduct(id) {
+        var results = favoritesGroup.filter((prod) => prod.id == id);
+        if (results.length > 0) {
+            return results[0];
+        } else {
+            return {};
+        }
     }
 
     // get cart items list
@@ -48,6 +69,8 @@ $(document).ready(function () {
 
     // // get favorites item
     var favoritesGroup = getFavorites();
+    // get products ids list that belogin to favorites group
+    var favoritesGroupIds = favoritesGroup.map((prod) => prod.id);
     // get cart items
     var cartItems = getCartItems();
     // get product ids list that belogin to cart items group
@@ -58,7 +81,10 @@ $(document).ready(function () {
 
         // current product id
         var id = favoritesGroup[i].id;
-        
+
+        // check if current product added before to favorites group
+        var isBelongsToFavorites = favoritesGroupIds.includes(id);
+
         // check if current product exist in cart items or not
         var isExistInCart = cartGroupIds.includes(id);
 
@@ -95,11 +121,15 @@ $(document).ready(function () {
             .text("(" + favoritesGroup[i].reviewCount + ")")
             .end()
             .insertAfter(".product:last");
-            
+
+        noFavoriteItems()
+
     }
 
     // Add To Cart Button Listener
     $(".product").find('.add_to_cart_btn').on("click", (event) => {
+        // get current cart items group
+        var cartItems = getCartItems();
         // access this product id
         var productId = event.currentTarget.accessKey;
         // change Add To Cart to added to cart 
@@ -112,6 +142,8 @@ $(document).ready(function () {
         // use this product id to add which product object 
         // to localStorage at cart products
 
+        // get current product
+        var currentProduct = getProduct(productId);
         // create new cart item object
         var cart_item = new cartItem(currentProduct.id,
             currentProduct.image,
@@ -162,9 +194,20 @@ $(document).ready(function () {
             }
             // restore updated favorites group
             restoreUpdatedFavoriteProducts(favoritesGroup);
-        } 
+        }
+
+        noFavoriteItems()
 
     });
+
+    // If No favourite items to show
+    function noFavoriteItems() {
+    if (favoritesGroup.length == 0) {
+        $("#noFavorites")
+            .removeClass("d-none") // display card
+    }
+    }
+    noFavoriteItems()
 
     $.wait = function (callback, milliseconds) {
         return window.setTimeout(callback, milliseconds);
