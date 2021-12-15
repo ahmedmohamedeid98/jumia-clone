@@ -177,7 +177,7 @@ $(document).ready(function () {
         }
     });
 
-
+//calculate the total of total
     $(".qnt-menu").on("change", (e) => {
         var cartItems = getCartItems();
         var qnt = e.currentTarget.options.selectedIndex + 1;
@@ -201,6 +201,17 @@ $(document).ready(function () {
         }
         return total;
     }
+
+        // If No items to show
+        function noItems() {
+            if (cartItems.length == 0) {
+                $("#noItems")
+                    .removeClass("d-none") // display card
+                 $("#total-items")
+                    .addClass("d-none")
+            }
+            }
+            noItems()
 
 
 });
