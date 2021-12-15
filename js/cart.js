@@ -92,7 +92,7 @@ $(document).ready(function () {
             .attr("accessKey", id) // also give favorite button current product id for use it later
             .addClass(isBelongsToFavorites ? "favorite-on" : "") // add it if this product added before to favorites group
             .end()
-
+            .addClass("cart-id-"+id)
             .find('.remove')
             //.addClass("d-none") // remove favorite-on if it exist from last cloned element
             .attr("accessKey", id) // also give favorite button current product id for use it later
@@ -175,6 +175,9 @@ $(document).ready(function () {
         var cartItems = getCartItems();
 
         if (removedItem) {
+
+            // update ui
+            $(".cart-id-"+productId).addClass("d-none");
         
             // remove current product object from favorite products in localStorage
             for (var i = 0; i < cartItems.length; i++) {
