@@ -25,6 +25,10 @@
     font-size: 30px;
 }
 
+.card:hover {
+    cursor: pointer;
+}
+
 /* end */
 /* start  categories*/
 
