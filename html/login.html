@@ -25,6 +25,18 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
+
+            <div id="existance-email-alert" class="alert alert-danger my-4 col-md-10 d-none"><strong>Wrong: </strong> This email
+                not
+                registered!
+            </div>
+        </div>
+        <div class="row justify-content-center">
+
+            <div id="password-alert" class="alert alert-danger my-4 col-md-10 d-none"><strong>Wrong: </strong> The Password may be wrong!
+            </div>
+        </div>
+        <div class="row justify-content-center">
             <div class=" col-md-5 loginbox me-3">
 
                 <h3 class="text-center">Login</h3>
@@ -58,7 +70,7 @@
                             class="text-danger ms-4 float-end">Forgot
                             your password ?</span>
                     </div>
-                    <button type="submit"
+                    <button type="submit" id="login-btn-id"
                         class="btn btn-primary d-flex justify-content-between align-items-center  col-md-12 mt-4">
                         <i class="far fa-envelope"></i>
                         <span class="float-center text-normal">LOGIN</span>

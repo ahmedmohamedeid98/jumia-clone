@@ -3,29 +3,7 @@ $(document).ready(function () {
     // Local Storage data Keys
     const FAVORITES_KEY = "favorites";
     const CARTITEMS_KEY = "cart_items";
-
-    // Product Object
-    var product = function (id, image, title, price, discountedPrice, rating, reviewCount) {
-        this.id = id;
-        this.image = image;
-        this.title = title;
-        this.price = price;
-        this.discountedPrice = discountedPrice;
-        this.rating = rating;
-        this.reviewCount = reviewCount;
-    }
-
-    // Cart Item Object
-    var cartItem = function (id, image, title, price, discountedPrice, rating, reviewCount, quantity) {
-        this.id = id;
-        this.image = image;
-        this.title = title;
-        this.price = price;
-        this.discountedPrice = discountedPrice;
-        this.rating = rating;
-        this.reviewCount = reviewCount;
-        this.quantity = quantity;
-    }
+  
     //get and restore favorite
     function getFavorites() {
         var data = localStorage.getItem(FAVORITES_KEY);
@@ -72,21 +50,26 @@ $(document).ready(function () {
     var favoritesGroupIds = favoritesGroup.map((prod) => prod.id);
    
     var cartItems = getCartItems();
-    var cartGroupIds = cartItems.map((prod) => prod.id);
 
+    var total = getTotal(cartItems);
+    console.log("Total: "+total);
+    $("#totalPrice-id").text(total);
     //loop in cart items
     for (var i = 0; i < cartItems.length; i++) {
         // current product id
         var id = cartItems[i].id;
         // check if current product added before to favorites group
         var isBelongsToFavorites = favoritesGroupIds.includes(id);
-        var isExistInCart = cartGroupIds.includes(id);
         
         $(".templet-cart")
             .clone()
             .last()
             .removeClass("d-none templet-cart") // display card and not make it templet
-
+            .find(".qnt-menu")
+            .attr("accessKey", id)
+            .val(cartItems[i].quantity)
+            .end()
+            
             .find('.favorite')
             .removeClass('favorite-on') // remove favorite-on if it exist from last cloned element
             .attr("accessKey", id) // also give favorite button current product id for use it later
@@ -126,6 +109,7 @@ $(document).ready(function () {
             .find('.totalPrice')
             .text("EGP " + cartItems[i].price * cartItems[i].quantity)
             .end()
+            
 
             .insertAfter(".product:last"); //asm aldvaya
     }
@@ -193,6 +177,30 @@ $(document).ready(function () {
         }
     });
 
+
+    $(".qnt-menu").on("change", (e) => {
+        var cartItems = getCartItems();
+        var qnt = e.currentTarget.options.selectedIndex + 1;
+        
+        var cart_item_id = e.currentTarget.accessKey;
+        for(var i = 0; i < cartItems.length; i++) {
+            if(cartItems[i].id == cart_item_id) {
+                cartItems[i].quantity = qnt;
+                $(".cart-id-"+cart_item_id+" .totalPrice").text("EGP " + cartItems[i].price * cartItems[i].quantity)
+                var total = getTotal(cartItems);
+                $("#totalPrice-id").text(total);
+            }
+        }
+        restoreUpdateCartItems(cartItems);
+    });
+
+    function getTotal(items) {
+        var total = 0;
+        for(i in items) {
+            total += items[i].quantity * items[i].price;
+        }
+        return total;
+    }
 
 
 });
