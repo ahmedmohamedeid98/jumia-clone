@@ -10,6 +10,11 @@
     font-weight: 470;
     color: #ababae;
 }
+.itempara1{
+    font-size: 15px;
+    font-weight: 470;
+    color: #ababae;
+}
 .itemLink a{
     text-decoration: none;
     color: black;
@@ -83,6 +88,11 @@
     color: #F68B1E;
     font-weight: 550;
 }
+.total1{
+    font-size: 20px;
+    color: #F68B1E;
+    font-weight: 550;
+}
 
 .totalPara{
     color: #B2ADAB;
@@ -107,4 +117,7 @@
 .checkout:hover{
     background-color:#F17E0A;
     color: white;
+}
+.favorite-on {
+    color: #EC255A;
 }
