@@ -44,6 +44,7 @@ $(document).ready(function () {
         localStorage.setItem(CARTITEMS_KEY, JSON.stringify(updatedGroup));
     }
 
+
     // get favorites item
     var favoritesGroup = getFavorites();
     // get products ids list that belogin to favorites group
@@ -112,6 +113,9 @@ $(document).ready(function () {
             
 
             .insertAfter(".product:last"); //asm aldvaya
+            
+            noItems()
+
     }
 
 
@@ -172,12 +176,13 @@ $(document).ready(function () {
             }
             // restore updated favorites group
             restoreUpdateCartItems(cartItems);
+            noItems()
         } else {
            return "hello"
         }
     });
 
-
+//calculate the total of total
     $(".qnt-menu").on("change", (e) => {
         var cartItems = getCartItems();
         var qnt = e.currentTarget.options.selectedIndex + 1;
@@ -192,6 +197,7 @@ $(document).ready(function () {
             }
         }
         restoreUpdateCartItems(cartItems);
+        noItems()
     });
 
     function getTotal(items) {
@@ -201,6 +207,17 @@ $(document).ready(function () {
         }
         return total;
     }
+
+        // If No items to show
+        function noItems() {
+            if (cartItems.length == 0) {
+                $("#noItems")
+                    .removeClass("d-none") // display card
+                 $("#total-items")
+                    .addClass("d-none")
+            }
+            }
+            noItems()
 
 
 });

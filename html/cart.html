@@ -109,7 +109,6 @@
     </nav>
 
 
-
     <!--start cart body-->
     <div class="container-fluid bg-light m-0">
         <div class="container bg-light px-3 pb-1 pt-4 ">
@@ -149,8 +148,8 @@
                         </div>
                         <div class="itemLink pb-2 px-3 pb-4"><a href="#"><span class="itemname">ECO Electric Oven With
                                     Grill & Fan - 48 L</span></a></div>
-                        <div class="loveItem d-inline-block  align-items-end px-3 pb-2"><a href="#"><i accesskey="1"
-                                    class="fas fa-heart favorite"></i>MOVE TO SAVED ITEMS</a></div>
+                        <div class="loveItem d-inline-block  align-items-end px-3 pb-2"><a href="#" accesskey="1"><i
+                                    class="fas fa-heart favorite loveItem"> MOVE TO SAVED ITEMS</i></a></div>
                         <div class="deletItem d-inline-block  align-items-end pb-2"><a href="#" accesskey="1"
                                 class="remove"><i class="fas fa-trash "></i>REMOVE</a></div>
                     </div>
@@ -160,7 +159,8 @@
                 <!--start quantity style-->
                 <div class="border-start border-end quantity  col-md-2 col-sm-4 rounded">
                     <div class="form-group w-50 m-auto pt-3">
-                        <select name="qnt-menu" id="qnt-menu-id" class="qnt-menu">
+                        <select name="qnt-menu" id="qnt-menu-id"
+                            class="qnt-menu form-control border-0 border-bottom text-center">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -189,8 +189,13 @@
             </div>
         </div>
 
+        <!-- If No items to show -->
+        <div class="container my-5 text-center py-5 px-3 d-none" id="noItems">
+            <div class="py-5 my-5 text-muted h2">No items to show here</div>
+        </div>
+
         <!--start total price div-->
-        <div class="container pt-3 d-flex">
+        <div class="container pt-3 d-flex " id="total-items">
             <div class="ms-auto">
                 <div class="pb-1"><span class="totaltxt">Total:</span><span class="total">EGP </span> <span
                         class="total1" id="totalPrice-id">1,443</span></div>
@@ -198,6 +203,7 @@
             </div>
         </div>
         <!--end total price div-->
+
 
 
         <!--start shopping button-->
@@ -215,10 +221,9 @@
         <!--start div to make padding bottom-->
         <div class="container-fluid bg-light p-2"></div>
         <!--end div to make padding bottom-->
-
     </div>
-
     <!--end cart body-->
+
 
 
     <!-- Footer -->
@@ -472,8 +477,10 @@
     </footer>
     <!-- Footer -->
 
-    <!-- js sources -->
+    <!-- jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- js sources -->
     <script src="../js/navbar.js"></script>
     <script src="../js/cart.js"></script>
 
@@ -481,6 +488,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

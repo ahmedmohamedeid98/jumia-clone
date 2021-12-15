@@ -27,7 +27,7 @@
 .itemLink{
     padding-bottom: 10px;
 }
-.loveItem a{
+.loveItem {
     text-decoration: none;
     color: #F68B1E;
     font-weight: 600;
@@ -37,8 +37,9 @@
     color: #F68B1E;
 }
 .loveItem i{
-    font-size: 15px;
+    font-size: 14px;
     padding-right: 9px;
+    font-weight: 600;
 } 
 .deletItem a{
     text-decoration: none;
