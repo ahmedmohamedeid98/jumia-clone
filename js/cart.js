@@ -58,6 +58,10 @@ $(document).ready(function () {
         }
     }
 
+       //add a number of items
+   var cartItems = getCartItems();
+   $(".cart-length").text(cartItems.length)
+
     function restoreUpdateCartItems(updatedGroup) {
         localStorage.setItem(CARTITEMS_KEY, JSON.stringify(updatedGroup));
     }
