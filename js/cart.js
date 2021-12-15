@@ -68,27 +68,16 @@ $(document).ready(function () {
 
     // get favorites item
     var favoritesGroup = getFavorites();
-    // get cart items
-    var cartItems = getCartItems();
     // get products ids list that belogin to favorites group
     var favoritesGroupIds = favoritesGroup.map((prod) => prod.id);
-    // get product ids list that belogin to cart items group
-    var cartGroupIds = cartItems.map((prod) => prod.id);
-
-
-
-
-
-    var cartItems = getCartItems();
+   
     //loop in cart items
-
     for (var i = 0; i < cartItems.length; i++) {
         // current product id
         var id = cartItems[i].id;
         // check if current product added before to favorites group
         var isBelongsToFavorites = favoritesGroupIds.includes(id);
-        // check if current product exist in cart items or not
-        var isExistInCart = cartGroupIds.includes(id);
+        
         $(".templet-cart")
             .clone()
             .last()
