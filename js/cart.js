@@ -113,7 +113,7 @@ $(document).ready(function () {
             
 
             .insertAfter(".product:last"); //asm aldvaya
-            
+
             noItems()
 
     }
