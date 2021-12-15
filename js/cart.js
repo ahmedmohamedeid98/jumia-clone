@@ -71,12 +71,16 @@ $(document).ready(function () {
     // get products ids list that belogin to favorites group
     var favoritesGroupIds = favoritesGroup.map((prod) => prod.id);
    
+    var cartItems = getCartItems();
+    var cartGroupIds = cartItems.map((prod) => prod.id);
+
     //loop in cart items
     for (var i = 0; i < cartItems.length; i++) {
         // current product id
         var id = cartItems[i].id;
         // check if current product added before to favorites group
         var isBelongsToFavorites = favoritesGroupIds.includes(id);
+        var isExistInCart = cartGroupIds.includes(id);
         
         $(".templet-cart")
             .clone()
@@ -87,6 +91,12 @@ $(document).ready(function () {
             .removeClass('favorite-on') // remove favorite-on if it exist from last cloned element
             .attr("accessKey", id) // also give favorite button current product id for use it later
             .addClass(isBelongsToFavorites ? "favorite-on" : "") // add it if this product added before to favorites group
+            .end()
+
+            .find('.remove')
+            //.addClass("d-none") // remove favorite-on if it exist from last cloned element
+            .attr("accessKey", id) // also give favorite button current product id for use it later
+            //.addClass(isExistInCart ? "" : "") // add it if this product added before to favorites group
             .end()
 
             .find('img')
@@ -153,6 +163,33 @@ $(document).ready(function () {
             restoreUpdatedFavoriteProducts(favoritesGroup);
         }
     });
+
+
+    /////////////////////////////remoooooooooooooooooooove/////////////////////////
+    $(".product").find('.remove').on("click", (event) => {
+        // access current product id
+        var productId = event.currentTarget.accessKey;
+        console.log("productId: " + productId);
+        var removedItem = event.currentTarget.classList.contains('remove');
+
+        var cartItems = getCartItems();
+
+        if (removedItem) {
+        
+            // remove current product object from favorite products in localStorage
+            for (var i = 0; i < cartItems.length; i++) {
+                if (cartItems[i].id == productId) {
+                    cartItems.splice(i, 1); // remove one item starting from index i
+                    break; // for performance 
+                }
+            }
+            // restore updated favorites group
+            restoreUpdateCartItems(cartItems);
+        } else {
+           return "hello"
+        }
+    });
+
 
 
 });
