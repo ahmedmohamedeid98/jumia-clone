@@ -94,6 +94,7 @@ function resetAllErrorsToBeHidden() {
 
 }
 
+
 resiterBtn.addEventListener("click", (e) => {
 
     resetAllErrorsToBeHidden();
@@ -124,7 +125,7 @@ resiterBtn.addEventListener("click", (e) => {
 
     if (everyThingValid) {
         e.preventDefault();
-
+        
         if (isUserExistInDB(emailInput.value)) {
             document.getElementById("existance-alert").classList.remove("d-none");
         } else {
@@ -145,9 +146,6 @@ resiterBtn.addEventListener("click", (e) => {
             re_route_to_login();
 
         }
-    } else {
-        e.preventDefault();
-
     }
 });
 
