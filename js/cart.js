@@ -26,7 +26,7 @@ $(document).ready(function () {
         this.reviewCount = reviewCount;
         this.quantity = quantity;
     }
-//get and restore favorite
+    //get and restore favorite
     function getFavorites() {
         var data = localStorage.getItem(FAVORITES_KEY);
         if (data) {
@@ -48,7 +48,7 @@ $(document).ready(function () {
     function restoreUpdatedFavoriteProducts(updatedGroup) {
         localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedGroup));
     }
-//get and restore cart
+    //get and restore cart
     function getCartItems() {
         var data = localStorage.getItem(CARTITEMS_KEY);
         if (data) {
@@ -58,9 +58,9 @@ $(document).ready(function () {
         }
     }
 
-       //add a number of items
-   var cartItems = getCartItems();
-   $(".cart-length").text(cartItems.length)
+    //add a number of items
+    var cartItems = getCartItems();
+    $(".cart-length").text(cartItems.length)
 
     function restoreUpdateCartItems(updatedGroup) {
         localStorage.setItem(CARTITEMS_KEY, JSON.stringify(updatedGroup));
@@ -76,92 +76,94 @@ $(document).ready(function () {
     var cartGroupIds = cartItems.map((prod) => prod.id);
 
 
-  //loop in cart items
-  var isBelongsToFavorites = favoritesGroupIds.includes(id);
-  // check if current product exist in cart items or not
-  var isExistInCart = cartGroupIds.includes(id);
 
 
-  var cartItems = getCartItems();
-  for (var i = 0; i < cartItems.length; i++) {
-         // current product id
-         var id = cartItems[i].id;
-         // check if current product added before to favorites group
-         $(".templet-cart")
-             .clone()
-             .last()
-             .removeClass("d-none templet-cart") // display card and not make it templet
 
-             .find('.favorite')
-             .removeClass('favorite-on') // remove favorite-on if it exist from last cloned element
-             .attr("accessKey", id) // also give favorite button current product id for use it later
-             .addClass(isBelongsToFavorites ? "favorite-on" : "") // add it if this product added before to favorites group
-             .end()
- 
-             .find('img')
-             .attr('src', cartItems[i].image)
-             .end()
- 
-             .find('.itemname')
-             .text(cartItems[i].title)
-             .end()
- 
-             .find('.itempara')
-             .text(cartItems[i].title)
-             .end()
- 
-             .find('.itemPrice')
-             .text(cartItems[i].price + " EGP")
-             .end()
- 
-             .find('.itemOldPrice')
-             .text(cartItems[i].discountedPrice + " EGP")
-             .end()
- 
-             .find('.savingPrice')
-             .text("Savings:EGP" + cartItems[i].reviewCount)
-             .end()
- 
-             .find('.totalPrice')
-             .text("EGP " + cartItems[i].price * cartItems[i].quantity)
-             .end()
- 
-             .insertAfter(".product:last");//asm aldvaya
-     }
+    var cartItems = getCartItems();
+    //loop in cart items
 
+    for (var i = 0; i < cartItems.length; i++) {
+        // current product id
+        var id = cartItems[i].id;
+        // check if current product added before to favorites group
+        var isBelongsToFavorites = favoritesGroupIds.includes(id);
+        // check if current product exist in cart items or not
+        var isExistInCart = cartGroupIds.includes(id);
+        $(".templet-cart")
+            .clone()
+            .last()
+            .removeClass("d-none templet-cart") // display card and not make it templet
 
- // Favorite Button Listener 
- $(".product").find('.favorite').on("click", (event) => {
-    // access current product id
-    var productId = event.currentTarget.accessKey;
-    // check if this product already added to favorite list and we want to remote it 
-    var unfavoriteProduct = event.currentTarget.classList.contains('favorite-on');
-    // if product id in favorite list remove it otherwise add it
-    var favoritesGroup = getFavorites();
+            .find('.favorite')
+            .removeClass('favorite-on') // remove favorite-on if it exist from last cloned element
+            .attr("accessKey", id) // also give favorite button current product id for use it later
+            .addClass(isBelongsToFavorites ? "favorite-on" : "") // add it if this product added before to favorites group
+            .end()
 
-    if (unfavoriteProduct) {
-        // update ui
-        event.currentTarget.classList.remove("favorite-on");
-        // remove current product object from favorite products in localStorage
-        for (var i = 0; i < favoritesGroup.length; i++) {
-            if (favoritesGroup[i].id == productId) {
-                favoritesGroup.splice(i, 1); // remove one item starting from index i
-                break; // for performance 
-            }
-        }
-        // restore updated favorites group
-        restoreUpdatedFavoriteProducts(favoritesGroup);
-    } else {
-        // update ui
-        event.currentTarget.classList.add("favorite-on");
-        //add this product object to favorite products in localStorage
-        var currentProduct = getProduct(productId);
-        // push new current product to exist favorites group
-        favoritesGroup.push(currentProduct);
-        // restore updated favorites group to local storage 
-        restoreUpdatedFavoriteProducts(favoritesGroup);
+            .find('img')
+            .attr('src', cartItems[i].image)
+            .end()
+
+            .find('.itemname')
+            .text(cartItems[i].title)
+            .end()
+
+            .find('.itempara')
+            .text(cartItems[i].title)
+            .end()
+
+            .find('.itemPrice')
+            .text(cartItems[i].price + " EGP")
+            .end()
+
+            .find('.itemOldPrice')
+            .text(cartItems[i].discountedPrice + " EGP")
+            .end()
+
+            .find('.savingPrice')
+            .text("Savings:EGP" + cartItems[i].reviewCount)
+            .end()
+
+            .find('.totalPrice')
+            .text("EGP " + cartItems[i].price * cartItems[i].quantity)
+            .end()
+
+            .insertAfter(".product:last"); //asm aldvaya
     }
-});
+
+
+    // Favorite Button Listener 
+    $(".product").find('.favorite').on("click", (event) => {
+        // access current product id
+        var productId = event.currentTarget.accessKey;
+        // check if this product already added to favorite list and we want to remote it 
+        var unfavoriteProduct = event.currentTarget.classList.contains('favorite-on');
+        // if product id in favorite list remove it otherwise add it
+        var favoritesGroup = getFavorites();
+
+        if (unfavoriteProduct) {
+            // update ui
+            event.currentTarget.classList.remove("favorite-on");
+            // remove current product object from favorite products in localStorage
+            for (var i = 0; i < favoritesGroup.length; i++) {
+                if (favoritesGroup[i].id == productId) {
+                    favoritesGroup.splice(i, 1); // remove one item starting from index i
+                    break; // for performance 
+                }
+            }
+            // restore updated favorites group
+            restoreUpdatedFavoriteProducts(favoritesGroup);
+        } else {
+            // update ui
+            event.currentTarget.classList.add("favorite-on");
+            //add this product object to favorite products in localStorage
+            var currentProduct = getProduct(productId);
+            // push new current product to exist favorites group
+            favoritesGroup.push(currentProduct);
+            // restore updated favorites group to local storage 
+            restoreUpdatedFavoriteProducts(favoritesGroup);
+        }
+    });
 
 
 });
