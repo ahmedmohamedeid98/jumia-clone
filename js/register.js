@@ -38,7 +38,7 @@ function re_route_to_login() {
 function validatePhoneNumber() {
     var pattern = /^[0][1][0 1 2 5]\d{8}$/;
     console.log(phoneInput.value);
-    if (phoneInput.value != null && phoneInput.value.match(pattern)) {
+    if (phoneInput.value != "" && phoneInput.value.match(pattern)) {
         return true;
     } else {
         return false;
@@ -48,7 +48,7 @@ function validatePhoneNumber() {
 function validateEmail() {
     var emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     console.log(emailInput.value);
-    if (emailInput.value != null && emailInput.value.match(emailPattern)) {
+    if (emailInput.value != "" && emailInput.value.match(emailPattern)) {
         return true;
     } else {
         return false;
@@ -56,7 +56,7 @@ function validateEmail() {
 }
 
 function validatePassword() {
-    if (passwordInput.value != null && passwordInput.value.length >= 8) {
+    if (passwordInput.value != "" && passwordInput.value.length >= 8) {
         return true;
     }
     return false;
@@ -98,34 +98,42 @@ function resetAllErrorsToBeHidden() {
 resiterBtn.addEventListener("click", (e) => {
 
     resetAllErrorsToBeHidden();
-    console.log("sumbit");
+
     var everyThingValid = true;
+    var allFieldsHaveValues = true;
+
     if (!validateEmail()) {
-        console.log("email is not valid");
         if (emailInput.value != "")
             emailInvalidSpan.classList.remove("d-none");
+        else allFieldsHaveValues = false;
         everyThingValid = false;
     }
     if (!validatePassword()) {
         if (passwordInput.value != "")
             passwordInvalidSpan.classList.remove("d-none");
+        else allFieldsHaveValues = false;
+
         everyThingValid = false;
     }
     if (!validatePhoneNumber()) {
         if (phoneInput.value != "")
             phoneInvalidSpan.classList.remove("d-none");
+        else allFieldsHaveValues = false;
+
         everyThingValid = false;
     }
     if (!validateGender()) {
-        genderInvalidSpan.classList.remove("d-none");
+        if (emailInput.value != "" && passwordInput.value != "" && phoneInput.value != "")
+            genderInvalidSpan.classList.remove("d-none");
+        else allFieldsHaveValues = false;
+
         everyThingValid = false;
     }
-
 
 
     if (everyThingValid) {
         e.preventDefault();
-        
+
         if (isUserExistInDB(emailInput.value)) {
             document.getElementById("existance-alert").classList.remove("d-none");
         } else {
@@ -146,6 +154,10 @@ resiterBtn.addEventListener("click", (e) => {
             re_route_to_login();
 
         }
+    }
+
+    if (allFieldsHaveValues && fname.value != "" && lname.value != "") {
+        e.preventDefault();
     }
 });
 
