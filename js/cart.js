@@ -177,6 +177,8 @@ $(document).ready(function () {
             updateTotalItemsCountInCart(cartItems);
             // restore updated favorites group
             restoreUpdateCartItems(cartItems);
+            var total = getTotal(cartItems);
+            $("#totalPrice-id").text(total);
             noItems(cartItems);
         } else {
             return "hello"
@@ -203,6 +205,7 @@ $(document).ready(function () {
 
     function updateTotalItemsCountInCart(cartItems) {
         $("#cart-items-count").text(cartItems.length);
+        $(".cart-length").text(cartItems.length);
     } 
 
     function getTotal(items) {
