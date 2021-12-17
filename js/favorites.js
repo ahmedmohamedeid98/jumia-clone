@@ -155,9 +155,15 @@ $(document).ready(function () {
             1);
         // add this cart item to cart items group
         cartItems.push(cart_item);
+        // update cart items count 
+        updateTotalItemsCountInCart(cartItems);
         // resoter cart items group in local storage
         restoreUpdateCartItems(cartItems);
     });
+
+    function updateTotalItemsCountInCart(cartItems) {
+        $("#cart-items-count").text(cartItems.length);
+    } 
 
     // Favorite Button Listener 
     $(".product").find('.favorite').on("click", (event) => {

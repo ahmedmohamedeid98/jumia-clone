@@ -173,6 +173,8 @@ $(document).ready(function () {
                     break; // for performance 
                 }
             }
+            // update cart items count
+            updateTotalItemsCountInCart(cartItems);
             // restore updated favorites group
             restoreUpdateCartItems(cartItems);
             noItems(cartItems);
@@ -198,6 +200,10 @@ $(document).ready(function () {
         restoreUpdateCartItems(cartItems);
 
     });
+
+    function updateTotalItemsCountInCart(cartItems) {
+        $("#cart-items-count").text(cartItems.length);
+    } 
 
     function getTotal(items) {
         var total = 0;
