@@ -1,4 +1,23 @@
-/* start */
+/* start  categories*/
+h1 {
+    text-transform: uppercase;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* end  categories*/
+
+
+/* Amazing Winter deals */
+.image img:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .image {
     position: relative;
 }
@@ -25,16 +44,4 @@
     font-size: 30px;
 }
 
-.card:hover {
-    cursor: pointer;
-}
-
 /* end */
-/* start  categories*/
-
-h1 {
-    text-transform: uppercase;
-
-}
-
-/* end  categories*/
