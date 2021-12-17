@@ -56,6 +56,7 @@ $(document).ready(() => {
     }
     
     $("#login-btn-id").on("click", (e) => {
+      hiddenAlertIfShowen();
       e.preventDefault();
       if(isUserExistInDB($("#email-id").val())) {
         if(checkPassword($("#email-id").val(), $("#password-id").val())) {
